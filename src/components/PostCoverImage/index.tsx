@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Props } from "next/script";
 
 type PostCoverImageProps = {
   url: string;

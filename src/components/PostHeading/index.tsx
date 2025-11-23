@@ -12,8 +12,10 @@ export function PostHeading({
   as: Tag = "h2",
 }: PostHeadingProps) {
   return (
-    <Tag className="text-2xl/tight font-extrabold mb-4 sm:text-4xl">
-      <Link href={url}>{children}</Link>
+    <Tag className="text-2xl/tight font-bold mb-4">
+      <Link className="group-hover:text-slate-600 transition" href={url}>
+        {children}
+      </Link>
     </Tag>
   );
 }
