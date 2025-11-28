@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Container } from "@/components/Container";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Blog - Next.js",
+  title: {
+    default: "Blog - Next.js",
+    template: "%s | Blog",
+  },
   description: "Feito em Next",
 };
 
@@ -23,8 +18,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="text-blue-50">{children}</body>
+    <html lang="pt-BR">
+      <body>
+        <Container>
+          <Header />
+          {children}
+          <Footer />
+        </Container>
+      </body>
     </html>
   );
 }
