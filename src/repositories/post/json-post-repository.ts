@@ -23,4 +23,9 @@ export class JsonPostRepository implements PostRepository {
     const post = posts.find((post) => post.id === id) || null;
     return post;
   }
+  async FindBySlug(slug: string): Promise<PostModel | null> {
+    const posts = await this.FindAllPublic();
+    const post = posts.find((post) => post.slug === slug) || null;
+    return post;
+  }
 }
